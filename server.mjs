@@ -1,12 +1,16 @@
 import express from 'express';
 import fetch from 'node-fetch';
 import cors from 'cors';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 const PORT = 3000;
 
-const NOTION_API_URL = 'https://api.notion.com/v1/databases/cd7f24d6139b4d09ba084deb7a1c65f9/query';
-const NOTION_API_KEY = 'secret_HSi1sBSFC0KZkg9wthXGJ5NkDzo9EiZenZxHs4FV8DX';
+const NOTION_API_URL = process.env.NOTION_API_URL;
+const NOTION_API_KEY = process.env.NOTION_API_KEY;
+console.log(`NOTION_API_URL: ${NOTION_API_URL}`)
+console.log(`NOTION_API_KEY: ${NOTION_API_KEY}`)
 
 app.use(cors())
 app.get('/fetchData', async (req, res) => {
