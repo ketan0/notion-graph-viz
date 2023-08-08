@@ -9,8 +9,6 @@ const PORT = 3000;
 
 const NOTION_API_URL = process.env.NOTION_API_URL;
 const NOTION_API_KEY = process.env.NOTION_API_KEY;
-console.log(`NOTION_API_URL: ${NOTION_API_URL}`)
-console.log(`NOTION_API_KEY: ${NOTION_API_KEY}`)
 
 app.use(cors())
 app.get('/fetchData', async (req, res) => {
